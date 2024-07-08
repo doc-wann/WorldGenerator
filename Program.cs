@@ -13,7 +13,6 @@ namespace WorldGenerator
         public static List<Culture> cultures = BuilderCulture.CulturesGenerator();
         static void Main(string[] args)
         {
-            Console.WriteLine("Seed" + Seed);
             BlockBuilder.BlockBuilder.BuildMap(10, 100, 1);
         }
 
