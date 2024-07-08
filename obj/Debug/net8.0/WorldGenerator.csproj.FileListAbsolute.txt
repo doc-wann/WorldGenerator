@@ -1,0 +1,15 @@
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.AssemblyInfoInputs.cache
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.AssemblyInfo.cs
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.sourcelink.json
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\WorldGenerator.exe
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\WorldGenerator.deps.json
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\WorldGenerator.runtimeconfig.json
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\WorldGenerator.dll
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\WorldGenerator.pdb
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.dll
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\refint\WorldGenerator.dll
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.pdb
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.genruntimeconfig.cache
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\ref\WorldGenerator.dll
