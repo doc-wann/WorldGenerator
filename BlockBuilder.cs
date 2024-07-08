@@ -7,12 +7,13 @@ namespace BlockBuilder
     {
         public class BlockVars
         {
-            public static List<string> blockTypes = new List<string> { "Grassland", "Forest", "Desert", "Mountain", "Swamp", "Tundra", "Jungle", "Savannah" };
+            public static List<string> blockTypes = new List<string> { "Grassland", "Forest", "Desert", "Mountain", "Sea", "Tundra", "Sea", "Sea" };
         }
         public static Block BuildBlock(int x, int y, int z)
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
-            WorldGenerator.Program.Seed += 1;
+            WorldGenerator.Program.UpdateSeed();
+
             Block block = new Block();
 
             block.x = x;
@@ -87,24 +88,14 @@ namespace BlockBuilder
                     Console.ForegroundColor = ConsoleColor.Gray;
                     return '█';
                 }
-                case "Swamp":
+                case "Sea":
                 {
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     return '█';
                 }
                 case "Tundra":
                 {
                     Console.ForegroundColor = ConsoleColor.White;
-                    return '█';
-                }
-                case "Jungle":
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    return '█';
-                }
-                case "Savannah":
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     return '█';
                 }
                 default:

@@ -17,7 +17,8 @@ namespace CityVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;
+            WorldGenerator.Program.UpdateSeed();
+
             return $"{CityVars.cityNames[rnd.Next(0, CityVars.cityNames.Count)]} {CityVars.cityTypes[rnd.Next(0, CityVars.cityTypes.Count)]}";
         }
 
@@ -30,7 +31,8 @@ namespace CityVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;
+            WorldGenerator.Program.UpdateSeed();
+
             return COTW[rnd.Next(0, COTW.Count)];
         }
 
@@ -38,7 +40,8 @@ namespace CityVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; return rnd.Next(1000, 100000);
+            WorldGenerator.Program.UpdateSeed();
+ return rnd.Next(1000, 100000);
         }
 
         public static City BuildRandomCity(List<Culture> culture)
@@ -48,7 +51,7 @@ namespace CityVars
             city.mayor = GetMayor();
             city.culture = GetCulture(culture);
             city.population = GetPopulation();
-            
+
             return city;
         }
     }

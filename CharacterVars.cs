@@ -19,35 +19,40 @@ namespace CharacterVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; 
+            WorldGenerator.Program.UpdateSeed();
+ 
             return CharacterVars.names[rnd.Next(0, CharacterVars.names.Count)];
         }
         public static string GetSurname()
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; 
+            WorldGenerator.Program.UpdateSeed();
+ 
             return CharacterVars.surnames[rnd.Next(0, CharacterVars.surnames.Count)];
         }
         public static string GetRace()
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; 
+            WorldGenerator.Program.UpdateSeed();
+ 
             return CharacterVars.race[rnd.Next(0, CharacterVars.race.Count)];
         }
         public static string GetGoal()
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; 
+            WorldGenerator.Program.UpdateSeed();
+ 
             return CharacterVars.goals[rnd.Next(0, CharacterVars.goals.Count)];
         }
         public static string[] GetTraits()
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; string[] traits = new string[3];
+            WorldGenerator.Program.UpdateSeed();
+ string[] traits = new string[3];
             for (int i = 0; i < 3; i++)
             {
                 traits[i] = CharacterVars.traits[rnd.Next(0, CharacterVars.traits.Count)];
@@ -58,7 +63,8 @@ namespace CharacterVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1; string[] skills = new string[3];
+            WorldGenerator.Program.UpdateSeed();
+ string[] skills = new string[3];
             for (int i = 0; i < 3; i++)
             {
                 skills[i] = CharacterVars.skills[rnd.Next(0, CharacterVars.skills.Count)];

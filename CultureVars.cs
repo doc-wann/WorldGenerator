@@ -16,7 +16,8 @@ namespace CultureVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;            
+            WorldGenerator.Program.UpdateSeed();
+            
            
            string Name = $"{CultureVars.nameStart[rnd.Next(0, CultureVars.nameStart.Count)]} {CultureVars.nameMiddle[rnd.Next(0, CultureVars.nameMiddle.Count)]} {CultureVars.nameEnd[rnd.Next(0, CultureVars.nameEnd.Count)]}";
 
@@ -28,7 +29,8 @@ namespace CultureVars
             
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;            
+            WorldGenerator.Program.UpdateSeed();
+            
             return CultureVars.languages[rnd.Next(0, CultureVars.languages.Count)];
         }
 
@@ -36,7 +38,8 @@ namespace CultureVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;            
+            WorldGenerator.Program.UpdateSeed();
+            
             return CultureVars.religions[rnd.Next(0, CultureVars.religions.Count)];
         }
 
@@ -44,7 +47,8 @@ namespace CultureVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;            
+            WorldGenerator.Program.UpdateSeed();
+            
             string[] dogmas = new string[3];
             for (int i = 0; i < 3; i++)
             {
@@ -73,7 +77,7 @@ namespace CultureVars
             culture.language = language;
             culture.religion = religion;
             culture.dogmas = dogmas;
-            
+
             return culture;
         }
 
@@ -81,7 +85,8 @@ namespace CultureVars
         {
             Random rnd = new Random(WorldGenerator.Program.Seed);
 
-            WorldGenerator.Program.Seed += 1;            
+            WorldGenerator.Program.UpdateSeed();
+            
             List<Culture> cultures = new List<Culture>();
             int CultureNumber = rnd.Next(2, 8);
 
