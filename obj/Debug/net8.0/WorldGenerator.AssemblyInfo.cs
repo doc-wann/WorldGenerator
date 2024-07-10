@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorldGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9489f513f1007f3f2fafe4f42a5a472d97f2d637")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b838ac23f5a9ab6ba69896a5faeb7561ca2b340")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorldGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorldGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
