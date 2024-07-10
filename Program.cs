@@ -14,12 +14,25 @@ namespace WorldGenerator
         static void Main(string[] args)
         {
             BlockBuilder.BlockBuilder.BuildMap(10, 100, 1);
+
+            Character character = BuilderChar.BuildRandomCharacter();
+
+            Auxiliary.PrintCharacterSelf(character);
+
+            ClearConsole();
         }
 
         public static int UpdateSeed()
         {
             Seed += DateTime.Now.Microsecond;
             return Seed;
+        }
+
+        public static void ClearConsole()
+        {
+            Console.WriteLine("\n=============\nPress any key to continue...\n\n=============");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
