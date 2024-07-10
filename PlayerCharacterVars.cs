@@ -5,7 +5,10 @@ namespace PlayerManager
     public class CharacterCreator
     {
         private static readonly List<string> Races = new List<string> { "Human", "Elf", "Dwarf", "Halfling" };
-        private static readonly List<string> Skills = new List<string> { "Acrobatics", "Arcana", "Athletics", "History", "Stealth" };
+        private static readonly List<string> Traits = new List<string> { "Brave", "Cowardly", "Honest", "Loyal", "Greedy", "Proud", "Vain", "Cunning"};
+        private static readonly List<Action> Skills = new List<Action>();
+        
+        private static readonly List<string> Classes = new List<string>() { "Warrior", "Mage", "Druid", "Cleric" };
 
         public static PlayerCharacter CreateCharacter()
         {
@@ -22,7 +25,7 @@ namespace PlayerManager
 
             character.race = ChooseFromList("race", Races);
 
-            int totalPoints = 8;
+            int totalPoints = 14;
             Console.WriteLine($"\nDistribute {totalPoints} points among the following attributes (minimum 0 point in each):");
             character.strenght = DistributePoints("strength", ref totalPoints);
             character.dexterity = DistributePoints("dexterity", ref totalPoints);
@@ -31,8 +34,8 @@ namespace PlayerManager
             character.wisdom = DistributePoints("wisdom", ref totalPoints);
             character.charisma = DistributePoints("charisma", ref totalPoints);
 
-            character.traits = ChooseTraitsOrSkills("traits", Skills);
-            character.skills = ChooseTraitsOrSkills("skills", Skills);
+            character.traits = ChooseTraits("traits", Traits);
+            character.classes = ChooseClass("class", Classes);
 
             PrintFooter("Character Created Successfully!");
             character = PopulateCharacterStats(character);
@@ -78,10 +81,10 @@ namespace PlayerManager
             return value;
         }
 
-        private static string[] ChooseTraitsOrSkills(string itemName, List<string> options)
+        private static string[] ChooseTraits(string itemName, List<string> options)
         {
             Console.WriteLine($"\nChoose {itemName} (comma separated, available options: {string.Join(", ", options)}): ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
             string[] chosenItems = input?.Split(',') ?? new string[0];
 
             for (int i = 0; i < chosenItems.Length; i++)
@@ -90,11 +93,24 @@ namespace PlayerManager
                 if (!options.Contains(chosenItems[i]))
                 {
                     Console.WriteLine($"Invalid {itemName} choice: {chosenItems[i]}. Please try again.");
-                    return ChooseTraitsOrSkills(itemName, options);
+                    return ChooseTraits(itemName, options);
                 }
             }
 
             return chosenItems;
+        }
+
+        private static string ChooseClass(string itemName, List<string> options)
+        {
+            Console.WriteLine($"\nChoose {itemName} (available options: {string.Join(", ", options)}): ");
+            string input = Console.ReadLine()!;
+            input = input.Trim();
+            if (!options.Contains(input))
+            {
+                Console.WriteLine($"Invalid {itemName} choice: {input}. Please try again.");
+                return ChooseClass(itemName, options);
+            }
+            return input;
         }
 
         private static void PrintHeader(string title)

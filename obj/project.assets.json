@@ -1,26 +1,76 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "System.Windows.Extensions/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "System.Windows.Extensions/8.0.0": {
+      "sha512": "Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
+      "type": "package",
+      "path": "system.windows.extensions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/System.Windows.Extensions.dll",
+        "lib/net6.0/System.Windows.Extensions.xml",
+        "lib/net7.0/System.Windows.Extensions.dll",
+        "lib/net7.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.8.0.0.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "System.Windows.Extensions >= 8.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\kikev\\.nuget\\packages\\": {}
+    "C:\\Users\\Henrique\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj",
+      "projectUniqueName": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj",
       "projectName": "WorldGenerator",
-      "projectPath": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj",
-      "packagesPath": "C:\\Users\\kikev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\obj\\",
+      "projectPath": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj",
+      "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kikev\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -48,6 +98,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "System.Windows.Extensions": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -64,7 +120,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

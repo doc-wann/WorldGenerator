@@ -20,71 +20,79 @@ namespace AuxFuncs
             }
         }
 
+        public static void ClearConsoleAsk()
+        {
+            Console.WriteLine("\n=============\nPress any key to continue...\n=============");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public static void ClearConsole()
+        {
+            Console.Clear();
+        }
+
+
+        public static void AnimatedText(string text, int delay)
+        {
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                System.Threading.Thread.Sleep(delay);
+            }
+        }
+
         public static void PrintCharacterSelf(PlayerCharacter character)
-    {
-        int width = 50; // Width of the character sheet
-        string border = new string('=', width);
-        string separator = new string('-', width);
-
-        // Print header
-        Console.WriteLine(border);
-        Console.WriteLine(CenterText("Character Sheet", width));
-        Console.WriteLine(border);
-
-        // Print character basic info
-        Console.WriteLine(CenterText($"Name: {character.name} {character.surname}", width));
-        Console.WriteLine(CenterText($"Race: {character.race}", width));
-        Console.WriteLine(CenterText($"Level: {character.level}", width));
-        Console.WriteLine(CenterText($"XP: {character.XP}", width));
-
-        Console.WriteLine(separator);
-
-        Console.WriteLine(CenterText($"HP: {character.HP} | MP: {character.MP}", width));
-
-
-        // Print attributes
-        Console.WriteLine(CenterText("Attributes", width));
-        Console.WriteLine(separator);
-        Console.WriteLine(CenterText($"Strength: {character.strenght}", width));
-        Console.WriteLine(CenterText($"Dexterity: {character.dexterity}", width));
-        Console.WriteLine(CenterText($"Constitution: {character.constitution}", width));
-        Console.WriteLine(CenterText($"Intelligence: {character.intelligence}", width));
-        Console.WriteLine(CenterText($"Wisdom: {character.wisdom}", width));
-        Console.WriteLine(CenterText($"Charisma: {character.charisma}", width));
-        Console.WriteLine(separator);
-
-        // Print traits
-        Console.WriteLine(CenterText("Traits", width));
-        Console.WriteLine(separator);
-        if (character.traits != null && character.traits.Length > 0)
         {
-            foreach (string trait in character.traits)
+            int width = 50; // Width of the character sheet
+            string border = new string('=', width);
+            string separator = new string('-', width);
+
+            // Print header
+            Console.WriteLine(border);
+            Console.WriteLine(CenterText("Character Sheet", width));
+            Console.WriteLine(border);
+
+            // Print character basic info
+            Console.WriteLine(CenterText($"Name: {character.name} {character.surname}", width));
+            Console.WriteLine(CenterText($"Class: {character.classes}", width));
+            Console.WriteLine(CenterText($"Race: {character.race}", width));
+            Console.WriteLine(CenterText($"Level: {character.level}", width));
+            Console.WriteLine(CenterText($"XP: {character.XP}", width));
+
+            Console.WriteLine(separator);
+
+            Console.WriteLine(CenterText($"HP: {character.HP} | MP: {character.MP}", width));
+
+
+            // Print attributes
+            Console.WriteLine(CenterText("Attributes", width));
+            Console.WriteLine(separator);
+            Console.WriteLine(CenterText($"Strength: {character.strenght}", width));
+            Console.WriteLine(CenterText($"Dexterity: {character.dexterity}", width));
+            Console.WriteLine(CenterText($"Constitution: {character.constitution}", width));
+            Console.WriteLine(CenterText($"Intelligence: {character.intelligence}", width));
+            Console.WriteLine(CenterText($"Wisdom: {character.wisdom}", width));
+            Console.WriteLine(CenterText($"Charisma: {character.charisma}", width));
+            Console.WriteLine(separator);
+
+            // Print traits
+            Console.WriteLine(CenterText("Traits", width));
+            Console.WriteLine(separator);
+            if (character.traits != null && character.traits.Length > 0)
             {
-                Console.WriteLine(CenterText($"- {trait}", width));
+                foreach (string trait in character.traits)
+                {
+                    Console.WriteLine(CenterText($"- {trait}", width));
+                }
             }
-        }
-        else
-        {
-            Console.WriteLine(CenterText("- None", width));
-        }
-        Console.WriteLine(separator);
-
-        // Print skills
-        Console.WriteLine(CenterText("Skills", width));
-        Console.WriteLine(separator);
-        if (character.skills != null && character.skills.Length > 0)
-        {
-            foreach (string skill in character.skills)
+            else
             {
-                Console.WriteLine(CenterText($"- {skill}", width));
+                Console.WriteLine(CenterText("- None", width));
             }
+            Console.WriteLine(separator);
+            Console.WriteLine(border);
         }
-        else
-        {
-            Console.WriteLine(CenterText("- None", width));
-        }
-        Console.WriteLine(border);
-    }
 
         public static void PrintCulture(Culture Culture)
         {

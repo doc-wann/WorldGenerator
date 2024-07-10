@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj": {}
+    "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj": {
+    "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj",
+        "projectUniqueName": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj",
         "projectName": "WorldGenerator",
-        "projectPath": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj",
-        "packagesPath": "C:\\Users\\kikev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\obj\\",
+        "projectPath": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj",
+        "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kikev\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -42,6 +42,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Windows.Extensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

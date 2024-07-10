@@ -57,6 +57,7 @@ namespace BlockBuilder
                     Console.Write("\n");
                 }
                 Console.Write(BlockToPiece(block.type!));
+                Console.ResetColor();
             }
 
             Console.BackgroundColor = ConsoleColor.Black;

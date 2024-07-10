@@ -28,3 +28,7 @@ C:\Users\kikev\Desktop\ProgrammingFolder\WorldGenerator\bin\Debug\net8.0\WorldGe
 C:\Users\kikev\Desktop\ProgrammingFolder\WorldGenerator\bin\Debug\net8.0\WorldGenerator.pdb
 C:\Users\kikev\Desktop\ProgrammingFolder\WorldGenerator\obj\Debug\net8.0\WorldGenerator.genruntimeconfig.cache
 C:\Users\kikev\Desktop\ProgrammingFolder\WorldGenerator\obj\Debug\net8.0\ref\WorldGenerator.dll
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\Henrique\Desktop\WorldGenerator\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGenerator.csproj.AssemblyReference.cache
+C:\Users\Henrique\Desktop\WorldGenerator\obj\Debug\net8.0\WorldGen.1481A9BD.Up2Date

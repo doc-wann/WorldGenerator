@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PoHzEaIDD7q1PQfVDXGJ9ocVbF/tZKczCBDddqKwjlfZgoEdqaVkD3Uy/lgnA74miK6phX7zbDAmDxTD9W4aiA==",
+  "dgSpecHash": "ThCz1PknLIPFnA2tNGtGrcNX8/RCitqU0tXkhXA6tsn5dp3UtrHl1+QI+nRkPbSZqE7zNaPs57xLYSX9tLQYyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kikev\\Desktop\\ProgrammingFolder\\WorldGenerator\\WorldGenerator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Henrique\\Desktop\\WorldGenerator\\WorldGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henrique\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

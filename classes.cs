@@ -1,4 +1,6 @@
 
+using WorldGenerator;
+
 public class Block
 {
     public int x;
@@ -81,11 +83,13 @@ public class PlayerCharacter
     public int wisdom;
     public int charisma;
     public string?[]? traits;
-    public string?[]? skills;
+    public string classes;
     public int HP;
     public int MP;
     public int XP;
     public int level;
+
+    public List<Action> actions = new List<Action>();
 
     public PlayerCharacter()
     {
@@ -105,6 +109,7 @@ public class PlayerCharacter
         int level = 1;
         int HP = 0;
         int MP = 0;
+        List<Action> actions = new List<Action>();
     }
 }
 
@@ -128,26 +133,55 @@ public class Druid
     };
 }
 
-public class Spell
+public class Action
 {
     public string name;
     public string description;
     public int level;
-    public string toHit;
+    public int toHit;
     public List<Dictionary<int, int>> damage;
-    public string range;
     public string type;
     public string duration;
 
-    public Spell(string name, string description, int level, string toHit, List<Dictionary<int, int>> damage, string range, string type, string duration)
+
+    public Action(string name, string description, int level, int toHit, List<Dictionary<int, int>> damage, string type, string duration)
     {
         this.name = name;
         this.description = description;
         this.level = level;
         this.toHit = toHit;
         this.damage = damage;
-        this.range = range;
         this.type = type;
         this.duration = duration;
     }
+}
+
+public class ActionResult()
+{
+    public int toHit = 0;
+    public int damage = 0;
+    public string type = "";
+}
+
+public class ActionLists
+{
+    public static List<Action>? ActionsListLvL0 = new List<Action>();
+
+    public static void PopulateActions()
+    {
+        Actions actions = new Actions(Program.MC);
+        ActionsListLvL0 = new List<Action> {actions.Soco, actions.Espadada, actions.ChicoteDeEspinhos};
+
+    }
+}
+
+public class Actions (PlayerCharacter character)
+{
+    //Level 0 Actions
+
+    public Action Soco = new("Soco", "Você soca o alvo!", 0, character.strenght + character.level, new List<Dictionary<int, int>>{ new Dictionary<int, int> { { 1, 4 } } }, "Esmagamento", "INST");
+
+    public Action Espadada = new Action("Espadada", "Você usa sua espada para rasgar o oponente!", 0, character.strenght + character.level, new List<Dictionary<int, int>>{ new Dictionary<int, int> { {1,10}, {character.strenght, 2}}}, "Corte", "INST");
+
+    public Action ChicoteDeEspinhos = new Action("Chicote de Espinhos", "Um chicote de vinhas sai das suas mãos e ataca violentamente seus alvos!", 0, character.dexterity + character.intelligence, new List<Dictionary<int,int>>{new Dictionary<int, int>{ {2,6}, {character.dexterity, character.wisdom + character.intelligence}}}, "Corte", "INST");
 }
