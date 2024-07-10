@@ -4,6 +4,7 @@ using CultureVars;
 using CityVars;
 using BlockBuilder;
 using AuxFuncs;
+using PlayerManager;
 
 namespace WorldGenerator
 {
@@ -13,11 +14,16 @@ namespace WorldGenerator
         public static List<Culture> cultures = BuilderCulture.CulturesGenerator();
         static void Main(string[] args)
         {
-            BlockBuilder.BlockBuilder.BuildMap(10, 100, 1);
+            Console.WriteLine("Welcome to the World Generator!");
 
-            Character character = BuilderChar.BuildRandomCharacter();
+            ClearConsole();
 
-            Auxiliary.PrintCharacterSelf(character);
+            PlayerCharacter MC = PlayerManager.CharacterCreator.CreateCharacter();
+
+            ClearConsole();
+
+            Console.WriteLine("Character created:");
+            AuxFuncs.Auxiliary.PrintCharacterSelf(MC);
 
             ClearConsole();
         }
