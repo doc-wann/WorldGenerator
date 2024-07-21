@@ -37,6 +37,8 @@ namespace PlayerManager
             character.traits = ChooseTraits("traits", Traits);
             character.classes = ChooseClass("class", Classes);
 
+            character.level = 1;
+
             PrintFooter("Character Created Successfully!");
             character = PopulateCharacterStats(character);
             return character;

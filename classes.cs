@@ -82,7 +82,7 @@ public class PlayerCharacter
     public int intelligence;
     public int wisdom;
     public int charisma;
-    public string?[]? traits;
+    public string?[] traits;
     public string classes;
     public int HP;
     public int MP;

@@ -71,8 +71,8 @@ namespace WorldGenerator
             if (choice == 1)
             {
                 Console.WriteLine("You attack!");
-                Action soco = new Action("Soco", "Um soco", 0, 5, new List<Dictionary<int, int>> { new Dictionary<int, int> { { 1, 4 } } }, "Bludgeoning", "Instantaneous");
-                enemy.Health -= ActionResultCalculator(soco).damage;
+                Action espada = new Action("Espada", "Um golpe de espada", 0, 5, new List<Dictionary<int, int>> { new Dictionary<int, int> { { 1, 6 } } }, "Slashing", "Instantaneous");
+                enemy.Health -= ActionResultCalculator(espada).damage;
                 MusicPlayer.HitSoundMalePlay();
             }
             else if (choice == 2)
@@ -104,6 +104,14 @@ namespace WorldGenerator
                 EnemyTurn(enemy);
             }
 
+            Auxiliary.ClearConsoleAsk();
+
+            if (MC.HP <= 0)
+            {
+                Console.WriteLine("You died!");
+                return;
+            }
+
             ChoiceCombat(enemy);
         }
         public static int UpdateSeed()
@@ -125,7 +133,9 @@ namespace WorldGenerator
                 {
                     for (int i = 0; i < enemy.Actions[0].DiceNumber1; i++)
                     {
-                        Damage += Dices.Roll(enemy.Actions[0].DiceType1);
+                        int roll = Dices.Roll(enemy.Actions[0].DiceType1);
+                        Console.WriteLine("Enemy rolled a " + roll + " on dice " + i + "!");
+                        Damage += roll;
                     }
 
                     Damage += enemy.Actions[0].BonusDamage;
