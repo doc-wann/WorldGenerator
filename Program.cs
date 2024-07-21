@@ -5,7 +5,6 @@ using CityVars;
 using BlockBuilder;
 using AuxFuncs;
 using PlayerManager;
-using PlayerManager;
 
 namespace WorldGenerator
 {
@@ -58,19 +57,22 @@ namespace WorldGenerator
             }
             else if (choice == 8)
             {
-                ChoiceCombat();
+                ChoiceCombat(Enemies.Zombie);
             }
 
             ChoiceAlpha();
         }
-        public static void ChoiceCombat()
+
+        public static void ChoiceCombat(Enemy enemy)
         {
-            int choice = AsciiArtsFuncs.CombatMenu();
+            int choice = AsciiArtsFuncs.CombatMenu(enemy);
             Auxiliary.ClearConsole();
 
             if (choice == 1)
             {
                 Console.WriteLine("You attack!");
+                Action soco = new Action("Soco", "Um soco", 0, 5, new List<Dictionary<int, int>> { new Dictionary<int, int> { { 1, 4 } } }, "Bludgeoning", "Instantaneous");
+                enemy.Health -= ActionResultCalculator(soco).damage;
                 MusicPlayer.HitSoundMalePlay();
             }
             else if (choice == 2)
@@ -82,6 +84,7 @@ namespace WorldGenerator
                 Console.WriteLine("You check your sheet!");
                 Auxiliary.ClearConsole();
                 Auxiliary.PrintCharacterSelf(MC);
+                choice = 909;
             }
             else if (choice == 4)
             {
@@ -90,15 +93,54 @@ namespace WorldGenerator
 
             Auxiliary.ClearConsoleAsk();
 
-            ChoiceCombat();
+            if (enemy.Health <= 0)
+            {
+                Console.WriteLine("You defeated the enemy!");
+                Console.WriteLine($"You got {enemy.LootTable[0]["Gold"]} gold and {enemy.LootTable[0]["Potion: Health"]} Health Potions!");
+                return;
+            }
+            if (choice != 909)
+            {
+                EnemyTurn(enemy);
+            }
+
+            ChoiceCombat(enemy);
         }
         public static int UpdateSeed()
         {
             Seed += DateTime.Now.Microsecond;
             return Seed;
         }
+
+        public static int EnemyTurn(Enemy enemy)
+        {
+            int Damage = 0;
+            int choice = new Random().Next(1, 3);
+
+            if (choice > 0)
+            {
+                Console.WriteLine($"The enemy attacks with {enemy.Actions[0].Name}!");
+
+                if (Dices.Roll(Dices.D20) + enemy.Actions[0].ToHit >= 10)
+                {
+                    for (int i = 0; i < enemy.Actions[0].DiceNumber1; i++)
+                    {
+                        Damage += Dices.Roll(enemy.Actions[0].DiceType1);
+                    }
+
+                    Damage += enemy.Actions[0].BonusDamage;
+                
+                    MusicPlayer.HitSoundMalePlay();
+
+                    MC.HP -= Damage;
+
+                    Console.WriteLine($"You took {Damage} damage! Your HP is now {MC.HP}!");
+                }
+            }
+            return choice;
+        }
     
-        public ActionResult ActionResultCalculator (Action Selected)
+        public static ActionResult ActionResultCalculator (Action Selected)
         {
             ActionResult Returnable = new ActionResult();
             foreach (Dictionary<int, int> damage in Selected.damage)

@@ -73,9 +73,11 @@ public class AsciiArtsFuncs
         }
     }
 
-    public static int CombatMenu()
+    public static int CombatMenu(Enemy enemy)
     {
         SideBySidePrint(PlayerSample, MonsterSample);
+        Console.WriteLine($"\nYou are facing a {enemy.Name}!\n");
+        Console.WriteLine($"{enemy.Name} Health: {enemy.Health}\n");
         Console.WriteLine(ChoiceMenuCombat);
         int choice;
         do
